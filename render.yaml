@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: sheshabus-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn "app:create_app()"
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        value: d826db5bcfd9b4f2ea580f9f4ca5b91fc26a7dd0cb9c45504c86f5d2f3adcfa0
+      - key: JWT_SECRET_KEY
+        value: f53b3a3c841048cc87fbc5d579413da48d6bd9fb36d149d6570d743271098332
+      - key: DATABASE_URL
+        value: postgresql://postgres:W1llc0m01!@db.fqstmnuxswecclhtnrtb.supabase.co:5432/postgres
+      - key: EMAIL_USER
+        value: willcom.reporting@willcom.co.za
+      - key: EMAIL_PASS
+        value: W1llc0m01!
+      - key: FRONTEND_URL
+        value: https://sheshabus.vercel.app
+      - key: ADMIN_URL
+        value: https://sheshabus-admin.vercel.app
+      - key: VAPID_PUBLIC_KEY
+        value: BGyaMv892pUaMTAf0WBJCY5Mn0PKtSjpX8wLKqocAchnIAhWvwDS-4mqiJUshoKv0zeQHPIedNUWK1Ebo0K__NE
+      - key: VAPID_PRIVATE_KEY
+        value: 5iZjczQt1XYls0dQ5jy5fgyUPmKGh5OYJJ-6SU5Mf3E
+      - key: CORS_ORIGINS
+        value: https://sheshabus.vercel.app,https://sheshabus-admin.vercel.app
