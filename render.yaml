@@ -27,3 +27,5 @@ services:
         value: 5iZjczQt1XYls0dQ5jy5fgyUPmKGh5OYJJ-6SU5Mf3E
       - key: CORS_ORIGINS
         value: https://sheshabus.vercel.app,https://sheshabus-admin.vercel.app
+      - key: PYTHON_VERSION
+        value: 3.12.7
